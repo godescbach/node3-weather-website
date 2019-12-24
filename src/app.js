@@ -58,7 +58,8 @@ app.get('/weather', (req, resp) => {
   
       const forecastString = forecastData.summary + '  It is currently ' + 
         forecastData.temperature + ' degrees out.  There is a ' + 
-        forecastData.precipProbability + ' chance of rain.'
+        forecastData.precipProbability + ' chance of rain.  Temperature high/low: ' +
+        forecastData.temperatureHigh + '/' + forecastData.temperatureLow
       resp.send({
         forecast: forecastString,
         location,
